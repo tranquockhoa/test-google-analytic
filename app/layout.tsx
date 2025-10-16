@@ -30,18 +30,17 @@ export default function RootLayout({
       >
         {children}
       </body>
+
       <Script
-        id="google-analytics"
-        // strategy="lazyOnload"
-      >
-        {`
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-            gtag('config', 'G-NKX4T3KKXQ', {
-            page_path: window.location.pathname,
-            });
-          `}
+        async
+        src="https://www.googletagmanager.com/gtag/js?id=G-NKX4T3KKXQ"
+      ></Script>
+      <Script>
+        {` window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-NKX4T3KKXQ');`}
       </Script>
     </html>
   );
