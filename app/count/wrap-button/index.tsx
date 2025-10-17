@@ -1,16 +1,16 @@
 "use client";
-import { useState } from "react";
-import { event } from "../ultils/gtag";
 
-export default function PageButton() {
-  const [count, setCount] = useState(0);
+import { event } from "@/app/ultils/gtag";
+import { useState } from "react";
+
+export default function WrapButton() {
+  const [count, setCount] = useState<number>(0);
 
   const handleClick = () => {
     setCount(count + 1);
   };
-
   return (
-    <div className="mt-[50] ml-[50] ">
+    <>
       <button
         type="button"
         className="bg-blue-500 px-[20] mr-[20] rounded-full"
@@ -40,6 +40,6 @@ export default function PageButton() {
       <p className="mt-[20]">
         count : <span>{count}</span>
       </p>
-    </div>
+    </>
   );
 }
